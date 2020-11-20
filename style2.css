@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  
+  html {
+    font-size: 24px;
+    font-family: 'Unica One', cursive;
+  }
+  
+  #app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 1rem 0;
+  }
+  
+  #app h1 {
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    margin-bottom: 8px;
+  }
+.calculator {
+    box-shadow: 10px 15px 15px -2px rgba(0,0,0,0.89);
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgb(64, 64, 66);
+}
+.display {
+    width: 400px;
+    height: 200px;
+    display: grid;
+    grid-template-rows: 50px 50px 50px;
+    border: 2px solid rgb(255, 255, 0);
+    border-radius: 10px;
+    background-color: rgb(160, 184, 123);
+    box-shadow: inset 4px 4px 4px -2px rgba(0,0,0,0.82);
+    margin: 10px;
+    padding: 10px;
+}
+.controls {    
+    width: 400px;
+    /* border: 2px solid black; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 100px 100px 100px 100px;
+    /* background-color: rgb(153, 153, 153); */
+    margin: 10px;
+    gap: 10px;
+}
+.held-label {
+    text-decoration: underline;
+}
+.memory {
+    grid-area: 1/span 3;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 2fr;
+}
+.operations {
+    grid-area: span 5 / 4;
+    display: grid;
+    gap: 10px;
+    
+}
+.digits {
+    grid-area: span 4 / span 3;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;  
+}
+.memory button {
+    background-color: rgb(131, 149, 164);
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px -2px rgba(0,0,0,0.82);
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Unica One', cursive;
+}
+.operations button {
+    background-color: rgb(42, 66, 145);
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px -2px rgba(0,0,0,0.82); 
+    font-size: 40px; 
+    font-weight: bold;
+    font-family: 'Unica One', cursive;
+}
+.digits button {
+    background-color: rgb(223, 223, 223);
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px -2px rgba(0,0,0,0.82);
+    font-size: 30px; 
+    font-weight: bold;
+    font-family: 'Unica One', cursive;
+}
+button:active {
+    transform: scale(0.9);
+    border-radius: 15px;
+    outline: none;
+}
+button {
+    outline: none;
+}
+.digits :last-of-type {
+    grid-column: span 2;
+}
+.next-value {
+    display: flex;
+    flex-direction: row-reverse;
