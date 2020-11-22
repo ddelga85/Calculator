@@ -26,6 +26,12 @@ $('.divide').click(function(){
         updateDisplay();     
 });
 
+$('.square-root').click(function(){
+    setHeldOperation(squareRoot);
+        $('.next-operation').text('	\u221A');
+        updateDisplay(); 
+})
+
 $('.equals').click(function(){
     setHeldOperation(null);
     $('.next-operation').text('');
@@ -90,8 +96,17 @@ function multiply(x, y){
 };
 
 function divide(x, y){
+    if(Number(y) === 0){
+        alert("CAN'T DIVIDE BY ZERO")
+    }else{
     return Number(x) / Number(y);
+    }
 };
+
+function squareRoot(x){
+    return Math.sqrt(Number(x));
+}
+
 
 function setHeldOperation(operation) {
     if(heldOperation !== null){
